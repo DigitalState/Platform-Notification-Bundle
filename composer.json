@@ -1,0 +1,31 @@
+{
+  "name": "DigitalState/Platform-Notification-Bundle",
+  "type": "symfony-bundle",
+  "description": "Digital State Notifications Bundle",
+  "homepage": "https://github.com/DigitalState/Platform-Notification-Bundle.git",
+  "keywords": ["Oro", "Notifications"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Digital State, Inc",
+      "homepage": "http://www.digitalState.ca"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "DigitalState/Platform-Admin-Bundle" : "dev-master",
+    "DigitalState/Platform-Entity-Bundle" : "dev-master",
+    "DigitalState/Platform-User-Bundle" : "dev-master",
+    "DigitalState/Platform-Widget-Bundle" : "dev-master"
+  },
+  "autoload": {
+    "psr-0": { "Ds\\Bundle\\NotificationBundle": "" }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  }
+}
