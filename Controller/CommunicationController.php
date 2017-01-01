@@ -8,6 +8,7 @@ use Ds\Bundle\NotificationBundle\Entity\Notification;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Oro\Bundle\SecurityBundle\Annotation\AclAncestor;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class CommunicationController
@@ -20,7 +21,7 @@ class CommunicationController extends Controller
      * Create action
      *
      * @param Notification $entity
-     * @return array
+     * @return Response|array
      * @Route("/create/{id}", requirements={"id"="\d+"})
      * @AclAncestor("ds.communication.communication.create")
      */

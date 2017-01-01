@@ -5,7 +5,6 @@ namespace Ds\Bundle\NotificationBundle\Manager;
 use Ds\Bundle\NotificationBundle\Entity\Notification;
 use Ds\Bundle\CommunicationBundle\Entity\Communication;
 use Ds\Bundle\CommunicationBundle\Entity\Content;
-use Ds\Bundle\CommunicationBundle\Entity\Criterion;
 
 /**
  * Class CommunicationManager
@@ -35,15 +34,6 @@ class CommunicationManager
                 ->setPresentation('');
             $communication->addContent($content);
         }
-
-        $criterion = new Criterion;
-        $criterion
-            ->setCommunication($communication)
-            ->setImplementation('notification')
-            ->setOperand1('id')
-            ->setOperator('=')
-            ->setOperand2($notification->getId());
-        $communication->addCriterion($criterion);
 
         return $communication;
     }
