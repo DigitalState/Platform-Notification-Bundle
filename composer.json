@@ -20,7 +20,7 @@
         "digitalstate/platform-widget-bundle" : "dev-master"
     },
     "autoload": {
-        "psr-4": { "Ds\\Bundle\\NotificationBundle": "" }
+        "psr-4": { "Ds\\Bundle\\NotificationBundle\\": "" }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
