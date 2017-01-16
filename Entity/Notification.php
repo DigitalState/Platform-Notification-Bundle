@@ -4,6 +4,7 @@ namespace Ds\Bundle\NotificationBundle\Entity;
 
 use Ds\Bundle\EntityBundle\Entity\Attribute;
 use Oro\Bundle\OrganizationBundle\Entity\Ownership;
+use Oro\Bundle\LocaleBundle\Entity\FallbackTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Ds\Bundle\CommunicationBundle\Entity\Channel;
 
@@ -68,6 +69,8 @@ class Notification
     use Attribute\Localized\Presentation;
 
     use Ownership\BusinessUnitAwareTrait;
+
+    use FallbackTrait;
 
     /**
      * @var \Oro\Bundle\LocaleBundle\Entity\LocalizedFallbackValue[]

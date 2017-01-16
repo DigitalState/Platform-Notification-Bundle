@@ -2,7 +2,7 @@
 
 namespace Ds\Bundle\NotificationBundle\Controller\Api\Rest;
 
-use Oro\Bundle\SoapBundle\Controller\Api\Rest\RestController;
+use Ds\Bundle\ApiBundle\Controller\Api\Rest\AbstractController;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
@@ -17,7 +17,7 @@ use Oro\Bundle\SecurityBundle\Annotation\AclAncestor;
  * @Route("/notification")
  * @NamePrefix("ds_notification_api_rest_")
  */
-class SubscriptionController extends RestController
+class SubscriptionController extends AbstractController
 {
     /**
      * Get collection action
@@ -106,5 +106,25 @@ class SubscriptionController extends RestController
     public function getManager()
     {
         return $this->get('ds.notification.manager.subscription');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function transformEntityField($field, &$value)
+    {
+        switch ($field) {
+            case 'user':
+            case 'notification':
+                $value = $this->transformEntityToId($value);
+                break;
+
+            case 'channels':
+                $value = $this->transformEntitiesToIds($value);
+                break;
+
+            default:
+                parent::transformEntityField($field, $value);
+        }
     }
 }
