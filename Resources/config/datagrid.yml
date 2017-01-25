@@ -118,8 +118,13 @@ datagrid:
         columns:
             id:
                 label: ds.notification.subscription.id.label
-            title:
+            notification_title:
                 label: ds.notification.subscription.notification.title.label
+                type: twig
+                frontend_type: html
+                template: DsNotificationBundle:Subscription:datagrid/property/notification_title.html.twig
+                context:
+                    entity_provider: @doctrine.orm.entity_manager
             username:
                 label: ds.notification.subscription.user.username.label
             createdAt:
