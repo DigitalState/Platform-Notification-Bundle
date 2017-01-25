@@ -16,7 +16,7 @@ datagrid:
         columns:
             id:
                 label: ds.notification.id.label
-            notification_title:
+            title:
                 label: ds.notification.title.label
                 type: twig
                 frontend_type: html
