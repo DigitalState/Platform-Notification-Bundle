@@ -16,8 +16,13 @@ datagrid:
         columns:
             id:
                 label: ds.notification.id.label
-            title:
+            notification_title:
                 label: ds.notification.title.label
+                type: twig
+                frontend_type: html
+                template: DsNotificationBundle:Notification:datagrid/property/title.html.twig
+                context:
+                    entity_provider: @doctrine.orm.entity_manager
             createdAt:
                 label: ds.notification.created_at.label
                 frontend_type: datetime
