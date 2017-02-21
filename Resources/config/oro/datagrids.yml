@@ -1,4 +1,4 @@
-datagrid:
+datagrids:
     ds-notification-notification:
         extended_entity_name: Ds\Bundle\NotificationBundle\Entity\Notification
         source:
@@ -69,7 +69,7 @@ datagrid:
                 type: navigate
                 label: ds.notification.grid.actions.view
                 link: view_link
-                icon: eye-open
+                icon: eye
                 acl_resource: ds.notification.notification.view
                 rowAction: true
             update:
@@ -178,7 +178,7 @@ datagrid:
                 type: navigate
                 label: ds.notification.subscription.grid.actions.view
                 link: view_link
-                icon: eye-open
+                icon: eye
                 acl_resource: ds.notification.subscription.view
                 rowAction: true
             update:
